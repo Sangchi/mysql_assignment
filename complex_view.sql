@@ -63,9 +63,9 @@ create  view CustomerOrderSummary as
 select
     C.CustomerID,
     C.CustomerName,
-    COUNT(O.OrderID) AS TotalOrders,
-    SUM(O.Quantity) AS TotalQuantity,
-    SUM(O.Quantity * P.Price) AS TotalAmountSpent
+    count(O.OrderID) AS TotalOrders,
+    sum(O.Quantity) AS TotalQuantity,
+    sum(O.Quantity * P.Price) AS TotalAmountSpent
 from 
     Customers C
 join
